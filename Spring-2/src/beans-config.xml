@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="user" class="cn.bdqn.entities.User" scope="prototype">
+	<property name="id" value="1000"></property>
+	<property name="name" value="孙悟空"></property>
+	</bean>
+	<bean id="order" class="cn.bdqn.entities.Order" depends-on="user">
+	<property name="id" value="1001"></property>
+	<property name="name" value="买买买"></property>
+	</bean>
+	<bean > </bean>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="root" />
+	    <property name="password" value="yubin050413" />
+	    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/jdbc_template" />
+	    <property name="driverClass" value="com.mysql.jdbc.Driver" />
+	</bean>
+	<bean id="datasource2" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+	</bean>
+</beans>
