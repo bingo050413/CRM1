@@ -11,13 +11,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<property name="id" value="1001"></property>
 	<property name="name" value="买买买"></property>
 	</bean>
-	<bean > </bean>
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="user" value="root" />
-	    <property name="password" value="yubin050413" />
-	    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/jdbc_template" />
-	    <property name="driverClass" value="com.mysql.jdbc.Driver" />
-	</bean>
+
 	<bean id="datasource2" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="user" value="${jdbc.username}"/>
 		<property name="password" value="${jdbc.password}"/>
